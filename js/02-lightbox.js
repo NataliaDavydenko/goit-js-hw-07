@@ -8,21 +8,15 @@ const galleryList = document.querySelector(".gallery");
 function onElementsCreate(galleryItems) {
   return galleryItems
     .map(({ preview, original, description }) => {
-      return `<a class="gallery__item" href="${original}">
+      return `<li><a class="gallery__item" href="${original}">
     <img class="gallery__image" src="${preview}" alt="${description}"/>
- </a>`;
+ </a></li>`;
     })
     .join("");
 }
 
 const galleryElements = onElementsCreate(galleryItems);
 galleryList.insertAdjacentHTML("beforeend", galleryElements);
-
-galleryList.addEventListener("click", openImgEl);
-
-function openImgEl(event) {
-  event.preventDefault();
-}
 
 let lightbox = new SimpleLightbox(".gallery a", {
   sourceAttr: "href",

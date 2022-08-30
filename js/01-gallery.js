@@ -45,6 +45,7 @@ function onModalOpen(event) {
     if (event.key === "Escape") {
       modalInstance.close();
       window.removeEventListener("keydown", onModalClose);
+      galleryList.removeEventListener("click", onModalClose);
     }
   }
 }
