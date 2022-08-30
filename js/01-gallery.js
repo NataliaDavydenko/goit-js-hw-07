@@ -39,13 +39,12 @@ function onModalOpen(event) {
 
   modalInstance.show();
 
-  window.addEventListener("keydown", onModalClose);
+  document.addEventListener("keydown", onModalClose);
 
   function onModalClose(event) {
     if (event.key === "Escape") {
       modalInstance.close();
-      window.removeEventListener("keydown", onModalClose);
-      galleryList.removeEventListener("click", onModalClose);
+      document.removeEventListener("keydown", onModalClose);
     }
   }
 }
